@@ -1,0 +1,22 @@
+{
+  "name": "marketplace",
+  "version": "1.0.0",
+  "description": "Marketplace",
+  "author": "Konrad Gadzinowski <kgadzinowski@gmail.com>",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "@kgadzinowski/vanilla-toast": "^1.1.0",
+    "bootstrap": "^3.4.1",
+    "bootstrap-sass": "^3.4.1",
+    "bootstrap-show-password": "^1.2.1",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.4.1",
+    "jquery-pjax": "^2.0.1",
+    "moment-timezone": "^0.5.25",
+    "nprogress": "^0.2.0",
+    "parsleyjs": "^2.9.1"
+  },
+  "devDependencies": {}
+}

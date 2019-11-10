@@ -1,0 +1,34 @@
+// Desktop and Tablet
+@media all and (min-width: 768px) {
+  .app-landing-page {
+
+    .btn-landing-page-action {
+      min-width: 165px;
+    }
+
+    .btn-landing-page-separator {
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}
+
+// Phone
+@media all and (max-width: 767px) {
+  .app-landing-page {
+
+    .btn-landing-page-action {
+      min-width: 200px;
+      width: 100%;
+    }
+
+    .btn-landing-page-separator {
+      min-width: 200px;
+      width: 100%;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}

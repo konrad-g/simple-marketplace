@@ -1,0 +1,166 @@
+@mixin box-shadow($offset, $blur) {
+  -webkit-box-shadow: $offset $offset $blur 0px #AFAFAF;
+  -moz-box-shadow: $offset $offset $blur 0px #AFAFAF;
+  box-shadow: $offset $offset $blur 0px #AFAFAF;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transform($transform) {
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  -webkit-transform: $transform;
+  transform: $transform;
+}
+
+@mixin corner-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.app-card > h5, .app-card > h4, .app-card > h3, .app-card > h2, .app-card > h1 {
+  padding: 0;
+  text-align: center;
+}
+
+.app-card > h3, .app-card > h2, .app-card > h1 {
+  font-size: 1.3em;
+  margin: 0;
+}
+
+.app-card > h5, .app-card > h4 {
+  font-size: 1.2em;
+  margin: 0 0 10px 0;
+}
+
+.app-card {
+  position: relative;
+  background-color: #FFF;
+  color: #333;
+  min-height: 10px;
+  min-width: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 10px;
+  display: block;
+  border: 1px #CCC solid;
+  text-align: left;
+  transition: box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  @include corner-radius(6px);
+}
+
+.app-card.no-padding {
+  padding: 0;
+}
+
+.app-shadow-0 {
+  border: #AFAFAF 1px solid;
+}
+
+.app-shadow-1 {
+  @include box-shadow(1px, 1px);
+}
+
+.app-shadow-2 {
+  @include box-shadow(2px, 1px);
+}
+
+.app-shadow-3 {
+  @include box-shadow(3px, 1px);
+}
+
+.app-shadow-4 {
+  @include box-shadow(4px, 1px);
+}
+
+.app-shadow-5 {
+  @include box-shadow(5px, 1px);
+}
+
+.app-shadow-6 {
+  @include box-shadow(6px, 1px);
+}
+
+.app-shadow-7 {
+  @include box-shadow(7px, 1px);
+}
+
+.app-shadow-8 {
+  @include box-shadow(8px, 1px);
+}
+
+.app-card-0 {
+  @extend .app-card;
+  border: none;
+}
+
+.app-card-1 {
+  @extend .app-card;
+  @extend .app-shadow-1;
+}
+
+.app-card-2 {
+  @extend .app-card;
+  @extend .app-shadow-2;
+}
+
+.app-card-3 {
+  @extend .app-card;
+  @extend .app-shadow-3;
+}
+
+.app-card-4 {
+  @extend .app-card;
+  @extend .app-shadow-4;
+}
+
+.app-card-5 {
+  @extend .app-card;
+  @extend .app-shadow-5;
+}
+
+.app-card-6 {
+  @extend .app-card;
+  @extend .app-shadow-6;
+}
+
+.app-card-7 {
+  @extend .app-card;
+  @extend .app-shadow-7;
+}
+
+.app-card-8 {
+  @extend .app-card;
+  @extend .app-shadow-8;
+}
+
+.app-card-1:focus, .app-card-2:focus, .app-card-3:focus, .app-card-4:focus, .app-card-5:focus, .app-card-6:focus,
+.app-card-7:focus, .app-card-8:focus, .app-card-9:focus {
+  outline:0;
+}
+
+.app-card-header {
+  max-width: 300px;
+}
+
+.app-card-center {
+  text-align: center;
+  display: inline-block;
+}
+
+.app-card-put-in-the-middle {
+  display: inline-block;
+  margin-left: 50%;
+  transform: translate(-50%,0);
+}

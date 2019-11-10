@@ -1,0 +1,88 @@
+@mixin box-shadow($offset, $blur) {
+  -webkit-box-shadow: $offset $offset $blur 0px #AFAFAF;
+  -moz-box-shadow: $offset $offset $blur 0px #AFAFAF;
+  box-shadow: $offset $offset $blur 0px #AFAFAF;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transform($transform) {
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  -webkit-transform: $transform;
+  transform: $transform;
+}
+
+@mixin corner-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.app-loader-in-button {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: url(../assets/loader.gif) left top;
+  background-size: contain;
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-right: -10px;
+  pointer-events: none;
+}
+
+.loader-full-screen {
+  position: fixed;
+  display: block;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 150;
+
+  .loader-spinner {
+    @extend .app-loader-in-button;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .loader-full-screen-card {
+    background-color: #FFF;
+    color: #333;
+    min-height: 10px;
+    min-width: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 10px;
+    display: inline-block;
+    border: 1px #CCC solid;
+    text-align: left;
+    transition: box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    @include corner-radius(6px);
+    @include box-shadow(1px, 1px);
+  }
+
+  .loader-full-screen-card-spinner {
+    @extend .loader-full-screen-card;
+    margin-top: calc(50vh - 55px);
+  }
+
+  .loader-full-screen-card-messege {
+    @extend .loader-full-screen-card;
+    font-weight: 600;
+  }
+}
+
+

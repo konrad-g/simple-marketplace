@@ -1,0 +1,209 @@
+.app-icon-small {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.app-icon-small-text {
+  line-height: 30px;
+}
+
+.app-inline {
+  display: inline-block;
+}
+
+.app-inline-top {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.app-inline-left {
+  display: inline-block;
+  float: left;
+}
+
+.app-inline-right {
+  display: inline-block;
+  float: right;
+}
+
+.app-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app-fit {
+  width: fit-content;
+  height: fit-content;
+}
+
+.app-fit-width {
+  width: fit-content;
+}
+
+.app-fit-height {
+  height: fit-content;
+}
+
+.app-center-content {
+  text-align: center !important;
+}
+
+.app-left-content {
+  text-align: left !important;
+}
+
+.app-right-content {
+  text-align: right !important;
+}
+
+.app-trim-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.app-panel {
+  padding: 10px;
+  overflow: visible;
+}
+
+.app-panel-medium {
+  @extend .app-panel;
+  max-width: 1100px;
+}
+
+.app-panel-medium-small {
+  @extend .app-panel;
+  max-width: 925px;
+}
+
+.app-panel-small {
+  @extend .app-panel;
+  max-width: 600px;
+}
+
+.app-panel-smaller {
+  @extend .app-panel;
+  max-width: 500px;
+}
+
+.app-panel-very-small {
+  @extend .app-panel;
+  max-width: 400px;
+}
+
+.app-panel-super-small {
+  @extend .app-panel;
+  max-width: 250px;
+}
+
+.app-panel-minimal {
+  @extend .app-panel;
+  max-width: 150px;
+}
+
+.app-margin-left {
+  margin-left: 20px;
+}
+
+.app-margin-right {
+  margin-right: 20px;
+}
+
+.buttons-full-width {
+  a.btn, .btn, button {
+    width: 100%;
+  }
+}
+
+// Texts sizes
+.app-text-small {
+  font-size: 0.8em;
+}
+
+.app-text-normal {
+  font-size: 1em;
+}
+
+.app-text-big {
+  font-size: 1.2em;
+}
+
+.app-text-huge {
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+// Lists
+.app-list-block {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app-list-block li {
+  margin-bottom: 10px;
+}
+
+.app-list-block li:last-child {
+  margin-bottom: 0;
+}
+
+.app-list-block li.app-top-margin {
+  margin-top: 25px;
+}
+
+// Floats
+.float-right-not-xs, .float-right-not-sm, .float-right-not-md, .float-right-not-lg{
+  float: right;
+}
+
+.float-left-not-xs, .float-left-not-sm, .float-left-not-md, .float-left-not-lg{
+  float: left;
+}
+@media (max-width: 767px) {    
+  .float-right-not-xs, .float-left-not-xs{
+      float: none;
+  }
+  .float-right-xs {
+      float: right;
+  }
+  .float-left-xs {
+      float: left;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .float-right-not-sm, .float-left-not-sm{
+      float: none;
+  }
+  .float-right-sm {
+      float: right;
+  }
+  .float-left-sm {
+      float: left;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .float-right-not-md, .float-left-not-md{
+      float: none;
+  }
+  .float-right-md {
+      float: right;
+  }
+  .float-left-md {
+      float: left;
+  }
+}
+@media (min-width: 1200px) {
+  .float-right-not-lg, .float-left-not-lg{
+      float: none;
+  }
+  .float-right-lg {
+      float: right;
+  }
+  .float-left-lg {
+      float: left;
+  }
+}

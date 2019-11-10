@@ -1,0 +1,49 @@
+$widthDrawer: 200px;
+$heightMenu: 55px;
+
+@mixin no-drag() {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.btn-dropdown-row {
+  display: block;
+  min-width: 135px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn-dropdown-row-last {
+  @extend .btn-dropdown-row;
+  margin-bottom: 0;
+}
+
+/* Desktop and Tablet */
+@media all and (min-width: 768px) {
+  body .app-drawer-background {
+    display: none;
+  }
+}
+
+/* Phone */
+@media all and (max-width: 767px) {
+  .navigation {
+    position: fixed;
+    display: block;
+    width: $widthDrawer;
+    bottom: 0;
+    top: $heightMenu;
+    left: -$widthDrawer - 20px;
+  }
+}
+
+.navigation .btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}

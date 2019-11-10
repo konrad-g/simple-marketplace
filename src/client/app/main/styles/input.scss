@@ -1,0 +1,595 @@
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin box-shadow($offset, $blur) {
+  -webkit-box-shadow: $offset $offset $blur 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: $offset $offset $blur 0px rgba(0, 0, 0, 0.5);
+  box-shadow: $offset $offset $blur 0px rgba(0, 0, 0, 0.5);
+}
+
+@mixin bg-gradient($top, $bottom) {
+  background: $top;
+  background-image: -webkit-linear-gradient(top, $top, $bottom);
+  background-image: -moz-linear-gradient(top, $top, $bottom);
+  background-image: -ms-linear-gradient(top, $top, $bottom);
+  background-image: -o-linear-gradient(top, $top, $bottom);
+  background-image: linear-gradient(to bottom, $top, $bottom);
+}
+
+@mixin no-drag() {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  display: inline-block;
+  font-size: 14px !important;
+  line-height: 1em !important;
+  vertical-align: middle;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  outline: 0;
+  outline: thin dotted \9
+;
+  /* IE6-9 */
+
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+textarea:focus,
+.form-control:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(92, 184, 92, 0.6);
+  outline: 0;
+  outline: thin dotted \9
+;
+  /* IE6-9 */
+
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(92, 184, 92, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(92, 184, 92, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(92, 184, 92, 0.6);
+}
+
+input[type="radio"] {
+  padding: 0;
+  height: 16px;
+  width: 15px;
+  float: left;
+  margin: 2px 5px 5px 0;
+  line-height: normal;
+}
+
+label.label-radio {
+  font-weight: normal;
+}
+
+input, textarea {
+  width: 100%;
+  border-bottom: #CCC 1px solid !important;
+  border-right: #CCC 1px solid !important;
+  border-top: #999 2px solid !important;
+  border-left: #999 2px solid !important;
+  font-family: sans-serif;
+  color: black;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  @include no-drag();
+}
+
+input {
+  line-height: 35px;
+  height: 35px;
+}
+
+textarea {
+  height: 80px;
+  min-height: 80px;
+  line-height: 20px;
+  padding: 5px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+button {
+  outline: none;
+}
+
+input[disabled], textarea[disabled], select[disabled], button[disabled], input[readonly], textarea[readonly], select[readonly], button[readonly] {
+  cursor: default !important;
+}
+
+input[disabled], textarea[disabled], input[readonly], textarea[readonly] {
+  background-color: #eceeef !important;
+  opacity: 1 !important;
+}
+
+a,
+a:active
+a:visited,
+a:link {
+  @include no-drag();
+  color: #20a920;
+  text-decoration: none;
+}
+
+a:hover {
+  @include no-drag();
+  color: #209a20;
+  text-decoration: underline;
+}
+
+.app-link,
+.app-link:link,
+.app-link:focus,
+.app-link:visited {
+  color: #20a920;
+}
+
+.app-link:hover {
+  color: #209a20;
+  text-decoration: underline;
+}
+
+.btn-link.btn-link-success,
+.btn-link.btn-link-success:link,
+.btn-link.btn-link-success:focus,
+.btn-link.btn-link-success:visited {
+  color: #20a920;
+}
+
+.btn-link.btn-link-success:hover {
+  color: #209a20;
+  text-decoration: underline;
+}
+
+.btn-line {
+  width: 100%;  
+  margin-bottom: 5px;
+}
+
+.btn-line-last {
+  width: 100%;  
+}
+
+.app-font-bold {
+  font-weight: 600;
+}
+
+.app-btn-wrapped {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.app-select:focus {
+  border-color: #989898;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(143, 143, 144, 0.6);
+}
+
+/* Button */
+.btn-default,
+.btn.btn-default {
+  color: #333;
+}
+
+.btn-success,
+.btn.btn-success,
+.btn.btn-warning,
+.btn.btn-danger {
+  color: #FFFFFF !important;
+}
+
+/* Button standard */
+.app-btn-standard {
+  @include bg-gradient(#EAEAEA, #A7A7A7);
+  font-family: Arial;
+  color: #000000;
+  border: 1px solid #A5A5A5;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @include no-drag();
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 5px 20px 6px 20px;
+}
+
+.app-btn-standard:hover {
+  @include bg-gradient(#f3f3f3, #b0b0b0);
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+.app-btn-standard:focus {
+  outline: 0;
+}
+
+.app-btn-standard:active {
+  @include bg-gradient(#A7A7A7, #EAEAEA);
+  text-decoration: none;
+  color: black;
+}
+
+.app-btn-standard:link, .app-btn-standard:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* Button standard main */
+.app-btn-standard-main {
+  @extend .app-btn-standard;
+  @include bg-gradient(#F9F9F9, #D0CCCC);
+}
+
+.app-btn-standard-main:hover {
+  @include bg-gradient(#fefefe, #d5d1d1);
+}
+
+.app-btn-standard-main:focus {
+}
+
+.app-btn-standard-main:active {
+  @include bg-gradient(#D0CCCC, #F9F9F9);
+  text-decoration: none;
+  color: black;
+}
+
+/* Button standard main colorful */
+.app-btn-standard-color {
+  @extend .app-btn-standard;
+  @include bg-gradient(#5ad1ff, #0097c9);
+  color: white;
+}
+
+.app-btn-standard-color:hover {
+  @include bg-gradient(#6bd4ff, #00a3d6);
+  color: white;
+}
+
+.app-btn-standard-color:focus {
+  color: white;
+}
+
+.app-btn-standard-color:active {
+  @include bg-gradient(#0097c9, #5ad1ff);
+  color: white;
+  text-decoration: none;
+}
+
+.app-btn-standard-color:link, .app-btn-standard-color:visited {
+  color: white;
+}
+
+/* Button standard square */
+.app-btn-standard-square {
+  @extend .app-btn-standard;
+  padding: 5px 5px 6px 5px;
+  width: 37px;
+  height: 37px;
+}
+
+.app-btn-standard-square img {
+  width: 100%;
+  height: 100%;
+  @include no-drag();
+}
+
+/* Button standard PayPal */
+.app-btn-standard-paypal {
+  @extend .app-btn-standard;
+  padding: 0;
+  height: 45px;
+  width: 150px;
+}
+
+/*Button transparent*/
+.btn-transparent,
+.btn-transparent:visited,
+.btn-transparent:link {
+  @include no-drag();
+  cursor: pointer;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 25px;
+  color: #FFF;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 17px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px
+}
+
+.btn-transparent:hover {
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.btn-transparent:active {
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Collapse buttons */
+.btn-collapsed-show {
+  display: none;
+}
+
+.btn-collapsed-hide {
+  display: block;
+}
+
+.collapsed.btn-collapsed-show {
+  display: block;
+}
+
+.collapsed.btn-collapsed-hide {
+  display: none;
+}
+
+/* Collapse buttons containers */
+.search-inline-wrapper {
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.search-inline-content {
+  display: inline-block;
+  overflow: visible;
+  vertical-align: top;
+  width: calc(100% - 44px);
+}
+
+.search-inline-content-2 {
+  @extend .search-inline-content;
+  width: calc(100% - 88px);
+}
+
+.search-inline-content-3 {
+  @extend .search-inline-content;
+  width: calc(100% - 132px);
+}
+
+.search-inline-button {
+  display: inline-block;
+  width: 40px;
+}
+
+/* Customized style for bootstrap buttons */
+.btn.app-btn, .btn.app-btn:visited {
+  @include bg-gradient(#EAEAEA, #A7A7A7);
+  font-family: Arial;
+  color: #000000 !important;
+  border: 1px solid #A5A5A5;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @include no-drag();
+}
+
+.btn.app-btn:hover {
+  @include bg-gradient(#f3f3f3, #b0b0b0);
+}
+
+.btn.app-btn:focus {
+  border-color: #989898;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(143, 143, 144, 0.6);
+}
+
+.btn.app-btn:active {
+  @include bg-gradient(#A7A7A7, #EAEAEA);
+}
+
+/* Combo box - Dropdown */
+.combobox-container > .input-group > .dropdown-toggle {
+  @include bg-gradient(#EAEAEA, #A7A7A7);
+  @include no-drag();
+  max-width: 35px;
+  border-left: #948f8f 1px solid;
+  cursor: pointer;
+  color: black;
+}
+
+.combobox-container > .input-group > .dropdown-toggle:hover {
+  @include bg-gradient(#f3f3f3, #b0b0b0);
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+.combobox-container > .input-group > .dropdown-toggle:focus {
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.combobox-container > .input-group > .dropdown-toggle:active {
+  @include bg-gradient(#A7A7A7, #EAEAEA);
+  text-decoration: none;
+  color: black;
+}
+
+.combobox-container > .input-group > .dropdown-toggle:link,
+.combobox-container > .input-group > .dropdown-toggle:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.combobox-container > .input-group > .dropdown-toggle > .glyphicon-remove {
+  font-size: 11px;
+}
+
+/* Combo box - Dropdown menu */
+.combobox-container > .input-group > .dropdown-menu {
+  width: 100%;
+  background-color: #fff;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.combobox-container > .input-group > .dropdown-menu > li,
+.combobox-container > .input-group > .dropdown-menu > li > a {
+  line-height: 35px;
+  height: 35px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.combobox-container > .input-group > .dropdown-menu > li.active > a {
+  @include bg-gradient(#5cb85c, #419641);
+}
+
+/* Combo box - Select */
+.combobox-container > .input-group > input[type="text"] {
+  border-radius: 4px 0 0 4px;
+}
+
+.combobox-container > .input-group > input[type="text"]:focus {
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+// Slim select
+// -------------------------
+.ss-main {
+  .ss-single-selected, .ss-multi-selected {
+    .ss-values .ss-value {
+      background-color: #209a20;
+    }
+  }
+}
+
+.ss-main .ss-content .ss-list .ss-option:hover, .ss-main .ss-content .ss-list .ss-option.ss-highlighted {
+  background-color: #209a20;
+}
+
+/* Button centered */
+.app-button-centered {
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 0px;
+}
+
+.table.table-no-margin {
+  margin-bottom: 0;
+}
+
+/* Tablet */
+@media all and (min-width: 768px) {
+  .app-btn-single {
+    width: 100%;
+    margin-top: 25px;
+  }
+}
+
+/* Phone */
+@media all and (max-width: 767px) {
+  .app-btn-single {
+    width: 100%;
+  }
+}
+

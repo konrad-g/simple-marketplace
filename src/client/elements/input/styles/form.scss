@@ -1,0 +1,85 @@
+/* Forms */
+.app-form-error-specific {
+  color: #CA0000;
+  font-weight: 500;
+}
+
+.app-form-element-top-margin {
+  margin-top: 25px;
+}
+
+.app-form-button-top-margin {
+  margin-top: 12px !important;
+}
+
+.form-group {
+  margin-bottom: 6px;
+}
+
+.form-group-simple {
+  margin-bottom: 6px;
+}
+
+.app-row-top-margin {
+  margin-top: 5px;
+}
+
+.app-form-button-centered {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 0px;
+}
+
+.app-superscript {
+  position: relative;
+  top: -0.5em;
+  font-size: 80%;
+}
+
+.next-row {
+  margin-top: 10px;
+}
+
+// Table Responsive
+// -------------------------
+
+/* Desktop and Tablet */
+@media all and (min-width: 768px) {
+
+  .table-mobile-responsive {
+    overflow-x: auto;
+  }
+}
+
+/* Phone */
+@media screen and (max-width: 768px) {
+
+  /* hide table headings */
+  .table-mobile-responsive table thead {
+    display: none;
+  }
+
+  /* treat rows like divs */
+  .table-mobile-responsive table tr {
+    display: block;
+    border-top: 2px solid lightgray; /* separate row data with thicker line */
+    margin-top: 5px;
+  }
+
+  /* treat columns like divs */
+  .table-mobile-responsive table td {
+    display: block;
+    text-align: right; /* text to right */
+  }
+
+  /* this part is ugly, but necessary to show label on left */
+  .table-mobile-responsive table td:before {
+    content: attr(data-label);
+    float: left; /* label to left */
+    font-weight: 700;
+  }
+}

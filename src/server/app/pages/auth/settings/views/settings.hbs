@@ -1,0 +1,110 @@
+<div class="app-center-content">
+  <div class="app-card-1 app-card-center">
+    <h2 class="page-header">Settings</h2>
+  </div>
+</div>
+
+<div class="app-card-1 app-panel-smaller">
+  <form data-parsley-validate action="/settings" method="POST" class="ajax">
+    <input type="hidden" name="_csrf" value="{{_csrf}}"/>
+
+    <div class="form-group">
+      <h3 class="page-subheader">API Keys</h3>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="stripePublishableKey" class="col-sm-12 control-label">Stripe Publishable Key</label>
+        <div class="col-sm-12">
+          <input type="text" name="stripePublishableKey" id="stripePublishableKey" value="{{stripePublishableKey}}" class="form-control" required/>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="stripeSecretKey" class="col-sm-12 control-label">Stripe Secret Key</label>
+        <div class="col-sm-12">
+          <input type="text" name="stripeSecretKey" id="stripeSecretKey" value="{{stripeSecretKey}}" class="form-control" required/>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group form-group-next">
+      <h3 class="page-subheader">Payment Details</h3>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="bankAccountHolder" class="col-sm-12 control-label">Account Holder</label>
+        <div class="col-sm-12">
+          <input type="text" name="bankAccountHolder" id="bankAccountHolder" value="{{bankAccountHolder}}" class="form-control" required/>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="bankAccountNumber" class="col-sm-12 control-label">Account Number</label>
+        <div class="col-sm-12">
+          <input type="text" name="bankAccountNumber" id="bankAccountNumber" value="{{bankAccountNumber}}" class="form-control" required/>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="bankWireTransferNumber" class="col-sm-12 control-label">Wire Transfer Number</label>
+        <div class="col-sm-12">
+          <input type="text" name="bankWireTransferNumber" id="bankWireTransferNumber" value="{{bankWireTransferNumber}}" class="form-control" required/>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="bankRoutingNumber" class="col-sm-12 control-label">Routing Number (ACH or ABA)</label>
+        <div class="col-sm-12">
+          <input type="text" name="bankRoutingNumber" id="bankRoutingNumber" value="{{bankRoutingNumber}}" class="form-control" required/>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="bankSwift" class="col-sm-12 control-label">SWIFT / BIC</label>
+        <div class="col-sm-12">
+          <input type="text" name="bankSwift" id="bankSwift" value="{{bankSwift}}" class="form-control" required/>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="bankAccountType" class="col-sm-12 control-label">Account Type</label>
+        <div class="col-sm-12">
+          {{selectAccountType}}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="bankAddress" class="col-sm-12 control-label">Address</label>
+        <div class="col-sm-12">
+          <textarea name="bankAddress" id="bankAddress" class="form-control" required>{{bankAddress}}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group-next">
+      <div class="row">
+        <div class="col-sm-12 app-center-content">
+          <button type="submit" class="btn btn-main"><i class="fa fa-text fa-pencil"></i>Save</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div id="pageId">page-settings</div>

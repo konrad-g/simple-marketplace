@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8"/>
+  <title>{{title}}</title>
+
+  <meta name="description" content="{{description}}"/>
+  <meta name="keywords" content="{{keywords}}"/>
+
+  {{#if disableIndexing}}
+    <meta name="robots" content="noindex,nofollow"/>
+  {{/if}}
+
+  <!-- Common metadata -->
+  <meta name="author" content="Marketplace" />
+  <meta name="copyright" content="Copyright © 2016 Marketplace All Rights Reserved." />
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="blue">
+  <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, minimal-ui"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#333333">
+  <meta name="csrf-token" content="{{_csrf}}">
+
+  <!-- Make app fullscreen -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Startup configuration -->
+  <link rel="manifest" href="/src/client/app/main/assets/manifest.json">
+
+  <!-- Icons - Created with faviconit.com -->
+  <link rel="shortcut icon" href="/src/client/app/main/assets/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/src/client/app/main/assets/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/src/client/app/main/assets/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/src/client/app/main/assets/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/src/client/app/main/assets/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/src/client/app/main/assets/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/src/client/app/main/assets/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/src/client/app/main/assets/favicon-16.png">
+	<link rel="apple-touch-icon" href="/src/client/app/main/assets/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/src/client/app/main/assets/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/src/client/app/main/assets/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/src/client/app/main/assets/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/src/client/app/main/assets/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/src/client/app/main/assets/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/src/client/app/main/assets/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/src/client/app/main/assets/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/src/client/app/main/assets/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/src/client/app/main/assets/favicon-144.png">
+	<meta name="msapplication-config" content="/src/client/app/main/assets/browserconfig.xml">
+
+  {{> styles}}
+</head>
+
+<body fullbleed vertical layout touch-action="pan-y">
+{{{menu}}}
+
+<div class="content">
+  <main id="mainContainer">
+    {{> flash}}
+    {{{viewContent}}}
+  </main>
+</div>
+<noscript>
+  <div id="dimBg">
+    <div class="centerAbsolute">Enable JavaScript to view this page</div>
+  </div>
+</noscript>
+
+{{> scripts}}
+
+</body>
+</html>

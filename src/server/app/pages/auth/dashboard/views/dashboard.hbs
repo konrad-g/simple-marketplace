@@ -1,0 +1,124 @@
+<div class="app-center-content">
+    <div class="app-card-1 app-card-center" style="min-width: 200px;">
+      <table class="table table-no-margin table-hover">
+        <tr class="app-font-bold">
+          <td>Balance</td>
+          <td>{{balanceText}}</td>
+        </tr>
+        <tr>
+          <td>Paid In</td>
+          <td>{{paidInText}}</td>
+        </tr>
+        <tr>
+          <td>Paid Out</td>
+          <td>{{paidOutText}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+<div class="app-center-content app-print-hide">
+  <div class="app-card-1 app-card-center">
+    <a href="/invoice/add" class="btn btn-main ajax"><i class="fa fa-text fa-plus"></i>Add Invoice</a>
+    <a href="/payout/add" class="btn btn-main ajax"><i class="fa fa-text fa-minus"></i>Add Payout</a>
+  </div>
+</div>
+
+<form data-parsley-validate="" action="?" method="GET" class="app-card-1 app-panel-medium-small app-print-hide app-card-1 ajax">
+  <div class="row">
+    <div class="col-sm-10">
+      <input name="filter" placeholder="Search" type="text" id="filter" value="{{filter}}" />
+    </div>
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-main form-control"><i class="fa fa-text fa-search"></i><span class="btn-text">Search</span></button>
+    </div>
+  </div>
+</form>
+
+{{#unless noInvoices}}
+<div class="app-card-1 app-panel-medium-small">
+  <button class="btn btn-default app-print-hide app-btn-print" type="button" onclick="window.print();">
+    <i class="fa fa-print"></i>
+  </button>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Number</th>
+        <th>Title</th>
+        <th>Email</th>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th class="app-print-hide">Details</th>
+      </tr>
+      </thead>
+      <tbody>
+        {{#eachProperty invoices}}
+          <tr>
+            <td>
+              {{value.number}}
+            </td>
+            <td>
+              {{value.title}}
+            </td>
+            <td>
+              {{value.email}}
+            </td>
+            <td>
+              {{value.typeText}}
+              {{#if value.paid}}
+                <div class="label label-success">
+                  Paid
+                </div>
+              {{else}}
+                <div class="label label-danger">
+                    Not Paid
+                </div>
+              {{/if}}
+            </td>
+            <td>
+              {{value.totalAmountText}}
+            </td>
+            <td>
+              {{value.issuedDateText}}
+            </td>
+            <td class="app-print-hide">
+              <a class="btn btn-default app-inline btn-line ajax" 
+                  {{#if value.isInvoice}}
+                    href="/invoice/edit/{{value._id}}" 
+                  {{else}}
+                    href="/payout/edit/{{value._id}}" 
+                  {{/if}}
+                ><i class="fa fa-text fa-pencil"></i>Edit</a>
+              <a class="btn btn-default app-inline btn-line-last ajax" 
+                  {{#if value.isInvoice}}
+                    href="/invoice/view/{{value._id}}" 
+                  {{else}}
+                    href="/payout/view/{{value._id}}" 
+                  {{/if}}
+                ><i class="fa fa-text fa-file-text-o"></i>Details</a>
+            </td>
+          </tr>
+        {{/eachProperty}}
+      </tbody>
+    </table>
+  </div>
+</div>
+{{/unless}}
+
+{{#if noInvoices}}
+  <div class="app-center-content">
+    <div class="app-card-1 app-card-center">
+      There are no entries.
+    </div>
+  </div>
+{{/if}}
+
+{{#unless noInvoices}}
+<div class="app-center-content app-print-hide">
+  <div class="app-card-1 app-card-center">
+    {{paginator}}
+  </div>
+</div>
+{{/unless}}

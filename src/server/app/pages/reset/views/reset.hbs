@@ -1,0 +1,31 @@
+<div class="app-card-1 app-panel-super-small">
+  <h2 class="page-header">Reset Password</h2>
+</div>
+<div class="app-card-1 app-panel-smaller">
+  <form data-parsley-validate method="POST" action="?" class="form-horizontal ajax">
+    <input type="hidden" name="_csrf" value="{{_csrf}}"/>
+    <div class="form-group">
+      <label for="password" class="col-sm-3 control-label">New Password</label>
+      <div class="col-sm-7">
+        <input type="password" name="password" id="password" placeholder="New password"
+               required="" class="form-control" autocomplete="nope" required/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="confirm" class="col-sm-3 control-label">Confirm Password</label>
+      <div class="col-sm-7">
+        <input type="password" name="confirm" id="confirm" placeholder="Confirm password" required=""
+               class="form-control" data-parsley-equalto="#password" autocomplete="nope" required/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-7">
+        <button type="submit" class="btn btn-main btn-reset"><i class="fa fa-text fa-keyboard-o"></i>Change Password</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+

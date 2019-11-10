@@ -1,0 +1,498 @@
+// Colors
+// -------------------------
+$green: #34d318;
+$blue: #00b0fb;
+$white: #fff;
+$grey: #f5f6f7;
+$black: #333;
+
+// Page Elements
+// -------------------------
+
+.page-header {
+  text-decoration: none;
+  border: none;
+
+  .page-header-additional-info {
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+}
+
+.form-inline .page-header, .page-header-inline {
+  text-decoration: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.3em;
+  line-height: 20px;
+}
+
+.page-subheader {
+  font-size: 1.1em;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.form-group-next, .form-group.form-group-next {
+  margin-top: 20px;
+}
+
+.app-btn-print {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+/* Phone */
+@media all and (max-width: 767px) {
+  // Add margin on collapsed columns
+  [class*="col-"]:not(:last-child){
+    margin-bottom: 6px;
+  }
+}
+
+// Input Fields
+// -------------------------
+
+textarea {
+  resize: vertical;
+}
+
+input.input-display-name.loading {
+  background-color: #a7d6ff;
+}
+
+input.input-display-name.error {
+  background-color: #f99dba;
+}
+
+.btn:focus, .btn:active {
+  outline: none !important;
+}
+
+// Button default
+// -------------------------
+.btn, .btn-default,
+.btn.btn-default,
+.btn-main {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.btn.btn-default, .btn-default {
+  color: black !important;
+}
+
+// Button main
+// -------------------------
+
+.btn-main,
+a.btn-main {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.btn-main.active,
+a.btn-main.active {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.btn-main.disabled,
+.btn-main[disabled],
+fieldset[disabled] .btn-main {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-main .badge {
+  text-shadow: none;
+}
+
+.btn-default.btn-main,
+.btn-default.btn-main:active
+.btn-default.btn-main:visited,
+.btn-default.btn-main:link {
+  color: white !important;
+}
+
+.btn-main,
+.btn-main:active
+.btn-main:visited,
+.btn-main:link
+a.btn-main,
+a.btn-main:active
+a.btn-main:visited,
+a.btn-main:link {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #3e8f3e;
+}
+
+.btn-main:focus,
+.btn-main.focus,
+a.btn-main:focus,
+a.btn-main.focus {
+  color: #fff;
+  background-color: #419641;
+  border-color: #3e8f3e;
+}
+
+.btn-main:hover,
+a.btn-main:hover {
+  color: #fff;
+  background-color: #419641;
+  border-color: #367d36;
+}
+
+.btn-main:active,
+.btn-main.active,
+.open > .dropdown-toggle.btn-main,
+a.btn-main:active,
+a.btn-main.active,
+.open > a.dropdown-toggle.btn-main {
+  color: #fff;
+  background-color: #419641;
+  border-color: #367d36;
+}
+
+.btn-main:active:hover,
+.btn-main.active:hover,
+.open > .dropdown-toggle.btn-main:hover,
+.btn-main:active:focus,
+.btn-main.active:focus,
+.open > .dropdown-toggle.btn-main:focus,
+.btn-main:active.focus,
+.btn-main.active.focus,
+.open > .dropdown-toggle.btn-main.focus
+a.btn-main:active:hover,
+a.btn-main.active:hover,
+.open > a.dropdown-toggle.btn-main:hover,
+a.btn-main:active:focus,
+a.btn-main.active:focus,
+.open > a.dropdown-toggle.btn-main:focus,
+a.btn-main:active.focus,
+a.btn-main.active.focus,
+.open > a.dropdown-toggle.btn-main.focus {
+  color: #fff;
+  background-color: #398439;
+  border-color: #3e8f3e;
+}
+
+.btn-main:active,
+.btn-main.active,
+.open > .dropdown-toggle.btn-main {
+  background-image: none;
+}
+
+.btn-main.disabled:hover,
+.btn-main[disabled]:hover,
+fieldset[disabled] .btn-main:hover,
+.btn-main.disabled:focus,
+.btn-main[disabled]:focus,
+fieldset[disabled] .btn-main:focus,
+.btn-main.disabled.focus,
+.btn-main[disabled].focus,
+fieldset[disabled] .btn-main.focus {
+  background-color: #5cb85c;
+  border-color: #3e8f3e;
+}
+
+.btn-main .badge {
+  color: #5cb85c;
+  background-color: #fff;
+}
+
+.btn-main {
+  background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%);
+  background-image: -o-linear-gradient(top, #5cb85c 0%, #419641 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#5cb85c), to(#419641));
+  background-image: linear-gradient(to bottom, #5cb85c 0%, #419641 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2aabd2', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #3e8f3e;
+}
+
+.btn-main:hover,
+.btn-main:focus {
+  background-color: #419641;
+  background-position: 0 -15px;
+}
+
+.btn-main:active,
+.btn-main.active {
+  background-color: #419641;
+  border-color: #367d36;
+}
+
+.btn-main.disabled,
+.btn-main[disabled],
+fieldset[disabled] .btn-main,
+.btn-main.disabled:hover,
+.btn-main[disabled]:hover,
+fieldset[disabled] .btn-main:hover,
+.btn-main.disabled:focus,
+.btn-main[disabled]:focus,
+fieldset[disabled] .btn-main:focus,
+.btn-main.disabled.focus,
+.btn-main[disabled].focus,
+fieldset[disabled] .btn-main.focus,
+.btn-main.disabled:active,
+.btn-main[disabled]:active,
+fieldset[disabled] .btn-main:active,
+.btn-main.disabled.active,
+.btn-main[disabled].active,
+fieldset[disabled] .btn-main.active {
+  background-color: #419641;
+  background-image: none;
+}
+
+// Specific button text visibility in grid
+// -------------------------
+@media all and (min-width: 768px) and (max-width: 960px) {
+  .app-panel-medium, .app-panel-medium-small {
+    .col-sm-2 {
+      .btn {
+        .btn-text {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 768px) {
+  .app-panel-very-super, .app-panel-very-small, .app-panel-small {
+    .col-sm-2 {
+      .btn {
+        .btn-text {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.note-btn:disabled, .note-btn-primary:disabled {
+  display: none;
+}
+
+// Social Buttons
+// -------------------------
+
+.btn-google,
+.btn-facebook,
+.btn-google:active,
+.btn-google:visited,
+.btn-google:link,
+.btn-facebook:active,
+.btn-facebook:visited,
+.btn-facebook:link {
+  color: #fff;
+}
+
+.btn-google:focus,
+.btn-facebook.focus {
+  color: #fff;
+}
+
+.btn-google:hover,
+.btn-facebook:hover {
+  color: #fff;
+}
+
+// Tables
+// -------------------------
+
+table.table tr.current {
+  color: #20a920;
+}
+
+table.table.table-no-borders > tbody > tr > td {
+  border: none;
+}
+
+table.table.table-no-dividers th, .table.table-no-dividers td {
+  border-top: none !important;
+}
+
+table.table caption {
+  color: black;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+// Alerts
+// -------------------------
+
+.alert {
+  margin-top: 20px;
+}
+
+.alert.app-inline {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 34px;
+  line-height: 34px;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.alert-danger a,
+.alert-danger a:active,
+.alert-danger a:link,
+.alert-danger a:visited {
+  color: #a94442;
+  text-decoration: underline !important;
+}
+
+.alert-danger a:hover {
+  color: #762f2e;
+}
+
+.alert-warning a,
+.alert-warning a:active,
+.alert-warning a:link,
+.alert-warning a:visited {
+  color: #94703a;
+  text-decoration: underline !important;
+}
+
+.alert-warning a:hover {
+  color: #71562c;
+}
+
+.alert-success a,
+.alert-success a:active,
+.alert-success a:link,
+.alert-success a:visited {
+  color: #3c7544;
+  text-decoration: underline !important;
+}
+
+.alert-success a:hover {
+  color: #2a522f;
+}
+
+.alert-info a,
+.alert-info a:active,
+.alert-info a:link,
+.alert-info a:visited {
+  color: #3173b3;
+  text-decoration: underline !important;
+}
+
+.alert-info a:hover {
+  color: #245585;
+}
+
+.alert.alert-no-margins, .alert-no-margins {
+  margin: 0 0 0 0;
+}
+
+// Modals
+// -------------------------
+
+body.modal-open {
+  overflow: visible;
+}
+
+.modal-backdrop {
+  display: none;
+}
+
+// Title Card
+// -------------------------
+
+.app-title-card {
+  position: relative;
+
+  .app-title-button-right {
+    display: inline-block;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+  }
+}
+
+.app-title-button-right.space-left {
+  margin-left: 15px;
+}
+
+// Form
+// -------------------------
+
+.form-line {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.app-hide-parsley-errors {
+  .parsley-errors-list {
+    display: none;
+  }
+}
+
+// Form list
+// -------------------------
+
+a.list-group-item, a.list-group-item:active, a.list-group-item:visited, a.list-group-item:link {
+  color: #555;
+}
+
+// Thumbnails
+// -------------------------
+
+.thumbnail {
+  padding: 0;
+  border-radius: 0;
+  box-shadow: 0 0 5px #ccc, inset 0 0 0 #000;
+}
+
+// Desktop and Tablet
+@media all and (min-width: 768px) {
+  .fa.fa-text {
+    margin-right: 6px;
+  }
+}
+
+// Phone
+@media all and (max-width: 767px) {
+  .fa.fa-text {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+// Page Data
+// -------------------------
+#pageId {
+  display: none;
+}
+
+#pageUserId {
+  display: none;
+}
+
+#pageData {
+  display: none;
+}

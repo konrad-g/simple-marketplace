@@ -1,0 +1,198 @@
+<div class="app-center-content">
+  <div class="app-card-1 app-card-center">
+    <h2 class="page-header">Invoice</h2>
+  </div>
+</div>
+
+
+<input type="hidden" name="stripePublishableKey" value="{{stripePublishableKey}}">
+<input type="hidden" name="invoiceId" value="{{invoiceId}}">
+<input type="hidden" name="invoiceTitle" value="{{invoiceTitle}}">
+<input type="hidden" name="invoiceDescription" value="{{invoiceDescription}}">
+<input type="hidden" name="invoiceTotalAmount" value="{{invoiceTotalAmount}}">
+<input type="hidden" name="isCardPaymentPending" value="{{#if isPaymentPending}}true{{/if}}">
+
+
+
+
+<div class="app-card-1 app-panel-smaller">
+  <button class="btn btn-default app-print-hide app-btn-print" type="button" onclick="window.print();">
+    <i class="fa fa-print"></i>
+  </button>
+
+  <div class="form-group">
+    <div class="row">
+      <label for="invoiceTitle" class="col-sm-12 control-label">Invoice Number</label>
+      <div class="col-sm-12">
+        {{invoiceNumber}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <label for="invoiceTitle" class="col-sm-12 control-label">Title</label>
+      <div class="col-sm-12">
+        {{invoiceTitle}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <label for="invoiceDescription" class="col-sm-12 control-label">Description</label>
+      <div class="col-sm-12">
+        {{invoiceDescription}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <label for="totalAmount" class="col-sm-12 control-label">Total Amount</label>
+      <div class="col-sm-12">
+        {{totalAmountText}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <label for="isPaid" class="col-sm-12 control-label">Is Paid</label>
+      <div class="col-sm-12">
+        {{#if isPaid}}
+        <div class="label label-success">
+          PAID
+        </div>
+        {{else}}
+        <div class="label label-danger">
+          NOT PAID
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <label for="issuedDate" class="col-sm-12 control-label">Issued Date</label>
+      <div class="col-sm-12">
+        {{issuedDateText}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group form-group-next">
+    <div class="row">
+      <label for="email" class="col-sm-12 control-label">Recipient's Email</label>
+      <div class="col-sm-12">
+        {{invoiceEmail}}
+      </div>
+    </div>
+  </div>
+
+  {{#if user}}
+    <div class="form-group-next app-print-hide">
+      <div class="row">
+        <div class="col-sm-12 app-center-content">
+          <a href="/invoice/edit/{{invoiceId}}" class="btn btn-default ajax"><i class="fa fa-text fa-pencil"></i>Edit</a>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#unless isPaid}}
+  <hr/>
+  <div class="app-center-content app-print-hide">
+    <button class="btn btn-main btn-payment" type="button" data-toggle="collapse" data-target="#collapseBankAccount" aria-expanded="false">
+      <i class="fa fa-text fa-bank"></i>Pay with a Bank Transfer
+    </button>
+    <button class="btn btn-main btn-payment btn-pay-card" type="button">
+      <i class="fa fa-text fa-credit-card"></i>Pay with a Card
+    </button>
+  </div>
+
+  {{#if isPayment}}
+  <div class="app-center-content app-print-hide payment-info">
+    <div class="alert {{#if isPaymentRejected}}alert-danger{{/if}}{{#if isPaymentPending}}alert-warning{{/if}} fade in">
+      <div>{{paymentStatus}}</div>
+    </div>
+  </div>
+  {{/if}}
+
+  <div id="collapseBankAccount" class="collapse">
+      <div class="table-responsive">
+        <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>USD Bank Account</th>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Account Holder</td>
+          <td>{{bankAccount.accountHolder}}</td>
+          <td><button type='button' class='btn btn-default btn-copy' data-copy='{{bankAccount.accountHolder}}'><i class='fa fa-clipboard'></i></button></td>
+        </tr>
+        <tr>
+          <td>Account Number</td>
+          <td>{{bankAccount.accountNumber}}</td>
+          <td><button type='button' class='btn btn-default btn-copy' data-copy='{{bankAccount.accountNumber}}'><i class='fa fa-clipboard'></i></button></td>
+        </tr>
+        <tr>
+          <td>Wire Transfer Number</td>
+          <td>{{bankAccount.wireTransferNumber}}</td>
+          <td><button type='button' class='btn btn-default btn-copy' data-copy='{{bankAccount.wireTransferNumber}}'><i class='fa fa-clipboard'></i></button></td>
+        </tr>
+        <tr>
+          <td>Routing Number (ACH or ABA)</td>
+          <td>{{bankAccount.routingNumber}}</td>
+          <td><button type='button' class='btn btn-default btn-copy' data-copy='{{bankAccount.routingNumber}}'><i class='fa fa-clipboard'></i></button></td>
+        </tr>
+        <tr>
+          <td>SWIFT (BIC)</td>
+          <td>{{bankAccount.swift}}</td>
+          <td><button type='button' class='btn btn-default btn-copy' data-copy='{{bankAccount.swift}}'><i class='fa fa-clipboard'></i></button></td>
+        </tr>
+        <tr>
+          <td>Account Type</td>
+          <td>{{bankAccount.accountType}}</td>
+          <td><button type='button' class='btn btn-default btn-copy' data-copy='{{bankAccount.accountType}}'><i class='fa fa-clipboard'></i></button></td>
+        </tr>
+        <tr>
+          <td>Title (Reference)</td>
+          <td>{{invoiceNumber}}</td>
+          <td><button type='button' class='btn btn-default btn-copy' data-copy='{{invoiceNumber}}'><i class='fa fa-clipboard'></i></button></td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>
+            {{bankAccountAddress}}
+          </td>
+          <td><button type='button' class='btn btn-default btn-copy' data-copy='{{bankAccount.address}}'><i class='fa fa-clipboard'></i></button></td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+  </div>
+  {{/unless}}
+</div>
+
+{{#unless isPaid}}
+<div class="msg-payment-succeeded app-center app-panel-super-small app-center-content hide" tabindex="-1">
+  <div class="alert alert-success fade in">
+    <div>Payment was successful</div>
+  </div>
+</div>
+
+<div class="msg-error app-center app-center-content hide" tabindex="-1">
+  <div class="alert alert-danger fade in">
+    <div>There was a problem with payment.</div>
+    <div class="msg-error-custom"></div>
+  </div>
+</div>
+{{/unless}}
+
+<div id="pageId">page-invoice</div>

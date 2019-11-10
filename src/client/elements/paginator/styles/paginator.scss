@@ -1,0 +1,34 @@
+.app-paginator-fast-first {
+  margin-right: 10px !important;
+}
+
+.app-paginator-fast-last {
+  margin-left: 10px !important;
+}
+
+.app-paginator {
+  font-size: 0;
+  white-space: nowrap;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
+
+  .btn-main.app-btn-paginator {
+    border-color: #999;
+  }
+
+  .btn-main.app-btn-paginator:active {
+    border-color: #BBB;
+  }
+}
+
+.app-paginator .btn.app-btn-paginator, .btn.app-btn-paginator {
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.app-paginator-hide {
+  visibility: hidden;
+}
+

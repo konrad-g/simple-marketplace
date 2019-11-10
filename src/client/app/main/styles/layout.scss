@@ -1,0 +1,125 @@
+// Scaffolding
+// -------------------------
+$widthDrawer: 200px;
+$heightMenu: 55px;
+$bgColor: #f5f6f7;
+
+html {
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  justify-content: stretch;
+  align-content: stretch;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+}
+
+html, body {
+  position: relative;
+  height: 100%;
+  color: #333;
+  background: $bgColor;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color:  transparent;
+}
+
+header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $heightMenu !important;
+  z-index: 15;
+}
+
+.content {
+  position: absolute;
+  background: $bgColor;
+  min-height: calc(100vh - #{$heightMenu}) !important;
+  top: $heightMenu;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color:  transparent;
+}
+
+main {
+  position: relative;
+  overflow: auto;
+  min-height: calc(100vh - #{$heightMenu}) !important;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  padding: 20px;
+  z-index: 5;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color:  transparent;
+}
+
+.card-inline {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.app-print-only {
+  display: none !important;
+}
+
+/* Print */
+@media print {
+  header {
+    display: none !important;
+  }
+
+  main {
+    position: absolute;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    min-height: 100% !important;
+    padding: 0 !important;
+
+    .app-card-1:nth-of-type(1) {
+      margin-top: 0;
+    }
+  }
+
+  .content {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+  }
+
+  .app-main-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .app-print-hide {
+    display: none !important;
+  }
+
+  .app-print-only {
+    display: block !important;
+  }
+
+  .alert {
+    display: none !important;
+  }
+
+  .alert.app-print-show {
+    display: block !important;
+  }
+}

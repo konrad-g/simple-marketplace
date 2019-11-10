@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "removeComments": true,
+    "jsx": "react",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  }
+}

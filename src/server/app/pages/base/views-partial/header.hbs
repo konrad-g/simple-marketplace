@@ -1,0 +1,37 @@
+<header class="navbar navbar-default">
+  <div class="header-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+
+          <a href="/" class="navbar-brand ajax">
+            <img src="/src/client/app/ui/menu-top/assets/CompanyLogo.svg" alt="Marketplace Icon"/>
+          </a>
+
+          <div class="nav navbar-right">
+            {{#if user}}
+              <div id="btnAccount" class="btn-nav">
+                <i class="fa fa-text fa-user"></i>
+                <span class="show-in-tablets-desktops">
+                  {{user.email}}
+                </span>
+              </div>
+            {{else}}
+              <a href="/login" class="ajax btn-nav"><i class="fa fa-text fa-sign-in"></i><span
+                class="show-in-tablets-desktops">Log In</span></a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{#if user}}
+      <div id="dropdownAccount" class="app-dropdown-box">
+        <a href="/settings" class="ajax btn btn-default btn-dropdown-row"><i
+          class="fa fa-text fa-id-card"></i>Settings</a>
+        <a href="/logout" class="ajax btn btn-default btn-dropdown-row-last"><i class="fa fa-text fa-sign-out"></i>Log
+          Out</a>
+      </div>
+    {{/if}}
+  </div>
+</header>
+

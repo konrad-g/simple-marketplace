@@ -1,0 +1,41 @@
+@mixin background-linear-gradient($topColor, $bottomColor) {
+  background-image: -webkit-linear-gradient(top, $topColor 0, $bottomColor 100%);
+  background-image: -o-linear-gradient(top, $topColor 0, $bottomColor 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from($topColor), to($bottomColor));
+  background-image: linear-gradient(to bottom, $topColor 0, $bottomColor 100%);
+  background-color: $topColor;
+}
+
+.app-paginator-fast-first {
+  margin-right: 10px !important;
+}
+
+.app-paginator-fast-last {
+  margin-left: 10px !important;
+}
+
+.app-paginator {
+  font-size: 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.app-paginator .btn.app-btn-paginator {
+  margin-left: 1px;
+  margin-right: 1px;
+  border-radius: 0;
+  @include background-linear-gradient(#bfbfbf, #a4a4a4);
+}
+
+.app-paginator .btn-primary.app-btn-paginator {
+  @include background-linear-gradient(#20a920, #1a911a);
+  border-color: #999;
+}
+
+.app-paginator .btn-primary.app-btn-paginator:active {
+  @include background-linear-gradient(#1a911a, #188518);
+  border-color: #BBB;
+}
+

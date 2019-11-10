@@ -1,0 +1,141 @@
+@mixin transform($transform) {
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  -webkit-transform: $transform;
+  transform: $transform;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin no-drag() {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+
+$height: 50px;
+
+.app-menu {
+  height: $height;
+  position: relative;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+  z-index: 105;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+}
+
+.app-menu > a {
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+  @include transition(text-shadow 1s ease);
+  @include transition(color 1s ease);
+}
+
+.app-menu .text-selected {
+  text-shadow: 0 0 8px #FF8827;
+  color: #FFEDE4 !important;
+}
+
+.app-menu a:hover, .app-menu a:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.app-menu h1 {
+  position: absolute;
+  left: 50%;
+  z-index: 7;
+  margin: 0;
+  transform: translate(-50%,0);
+}
+
+.app-menu-main-icon {
+  @include no-drag();
+  display: block;
+  position: relative;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app-menu-btn-icon {
+  @include no-drag();
+  position: relative;
+  z-index: 7;
+  width: 71px;
+  top: 0;
+}
+
+.app-menu-btn-icon-left {
+  @extend .app-menu-btn-icon;
+  float: left;
+  border-right: solid #69635F 1px;
+}
+
+.app-menu-btn-icon-right {
+  @extend .app-menu-btn-icon;
+  float: right;
+  border-left: solid #69635F 1px;
+}
+
+.app-menu-btn-icon-left img,
+.app-menu-btn-icon-right img {
+  @include no-drag();
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: content-box;
+  margin-top: 5px;
+}
+
+.app-menu-item-subtitle {
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  line-height: 1.5em;
+  font-size: 0.8em;
+  margin-top: 0;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Desktop and tablet */
+@media all and (min-width: 300px) {
+  .app-menu-main-icon {
+    height: 40px;
+    width: 155px;
+    top: 5px;
+  }
+}
+
+/* Phone */
+@media all and (max-width: 300px) {
+  .app-menu-main-icon {
+    height: 20px;
+    width: 98px;
+    top: 14px;
+  }
+}

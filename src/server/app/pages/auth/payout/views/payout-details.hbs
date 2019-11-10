@@ -1,0 +1,94 @@
+<div class="app-center-content">
+  <div class="app-card-1 app-card-center">
+    <h2 class="page-header">Payout</h2>
+  </div>
+</div>
+
+<div class="app-card-1 app-panel-smaller">
+  <button class="btn btn-default app-print-hide app-btn-print" type="button" onclick="window.print();">
+    <i class="fa fa-print"></i>
+  </button>
+
+  <div class="form-group">
+    <div class="row">
+      <label for="invoiceTitle" class="col-sm-12 control-label">Payout Number</label>
+      <div class="col-sm-12">
+        {{invoiceNumber}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <label for="invoiceTitle" class="col-sm-12 control-label">Title</label>
+      <div class="col-sm-12">
+        {{invoiceTitle}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <label for="invoiceDescription" class="col-sm-12 control-label">Description</label>
+      <div class="col-sm-12">
+        {{invoiceDescription}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <label for="totalAmount" class="col-sm-12 control-label">Total Amount</label>
+      <div class="col-sm-12">
+        {{totalAmountText}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <label for="isPaid" class="col-sm-12 control-label">Is Paid</label>
+      <div class="col-sm-12">
+        {{#if isPaid}}
+        <div class="label label-success">
+          PAID
+        </div>
+        {{else}}
+        <div class="label label-danger">
+          NOT PAID
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <label for="issuedDate" class="col-sm-12 control-label">Issued Date</label>
+      <div class="col-sm-12">
+        {{issuedDateText}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group form-group-next">
+    <div class="row">
+      <label for="email" class="col-sm-12 control-label">Recipient's Email</label>
+      <div class="col-sm-12">
+        {{invoiceEmail}}
+      </div>
+    </div>
+  </div>
+
+  {{#if user}}
+    <div class="form-group-next app-print-hide">
+      <div class="row">
+        <div class="col-sm-12 app-center-content">
+          <a href="/payout/edit/{{invoiceId}}" class="btn btn-default ajax"><i class="fa fa-text fa-pencil"></i>Edit</a>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+</div>
+
+<div id="pageId">page-payout</div>

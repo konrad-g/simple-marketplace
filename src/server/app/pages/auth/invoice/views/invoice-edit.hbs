@@ -1,0 +1,115 @@
+<div class="app-center-content">
+  <div class="app-card-1 app-card-center">
+    <h2 class="page-header">{{#if isInvoice}}Edit{{else}}Add{{/if}} Invoice</h2>
+  </div>
+</div>
+
+<div class="app-card-1 app-panel-smaller">
+  <form data-parsley-validate action="?" method="POST" class="ajax">
+    <input type="hidden" name="_csrf" value="{{_csrf}}"/>
+    
+    {{#if isInvoice}}
+    <div class="form-group">
+      <div class="row">
+        <label for="invoiceTitle" class="col-sm-12 control-label">Invoice Number</label>
+        <div class="col-sm-12">
+          {{invoiceNumber}}
+        </div>
+      </div>
+    </div>
+    {{/if}}
+    
+    <div class="form-group">
+      <div class="row">
+        <label for="invoiceTitle" class="col-sm-12 control-label">Title</label>
+        <div class="col-sm-12">
+          <input type="text" name="invoiceTitle" id="invoiceTitle" value="{{invoiceTitle}}" class="form-control" required/>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="email" class="col-sm-12 control-label">Customer's Email</label>
+        <div class="col-sm-12">
+          <input type="email" name="email" id="email" value="{{invoiceEmail}}" class="form-control" required/>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="invoiceDescription" class="col-sm-12 control-label">Description</label>
+        <div class="col-sm-12">
+          <textarea type="text" name="invoiceDescription" id="invoiceDescription" class="form-control" required>{{invoiceDescription}}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="totalAmount" class="col-sm-12 control-label">Total Amount</label>
+        <div class="col-sm-12">
+          <input type="number" step="0.01" min="0.01" name="totalAmount" id="totalAmount" value="{{totalAmount}}" class="form-control" required/>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="isPaid" class="col-sm-12 control-label">Is Paid</label>
+        <div class="col-sm-12">
+          <label>
+            <input name="isPaid" type="checkbox" class="app-ios-switch form-control" {{#if isPaid}}checked{{/if}} validate="true"/>
+            <div class="app-switch"></div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <label for="issuedDate" class="col-sm-12 control-label">Issued Date</label>
+        <div class="col-sm-12">
+          <div class='input-group date' id='issuedDate'>
+            <input name="issuedDate" type='text' class="form-control" value="{{issuedDate}}" autocomplete="nope" required
+                   data-parsley-errors-container="#error-container-issue-date"/>
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group-next app-print-hide">
+      <div class="row">
+        <div class="col-sm-12 app-center-content">
+          <button type="submit" class="btn btn-main"><i class="fa fa-text {{#if isInvoice}}fa-pencil{{else}}fa-plus{{/if}}"></i>{{#if isInvoice}}Save{{else}}Add{{/if}} Invoice</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="app-center-content">
+  <div class="app-card-1 app-card-center">
+    <div class="app-print-hide">
+      <div class="row">
+        <div class="col-sm-12">
+          <form data-parsley-validate action="/payout/delete" method="POST" class="app-hide-parsley-errors ajax">
+            <input type="hidden" name="_csrf" value="{{_csrf}}"/>
+            <input type="hidden" name="id" value="{{invoiceId}}"/>
+            <label>
+              <input name="confirm" type="checkbox" class="app-ios-switch form-control" validate="true" required />
+              <div class="app-switch"></div>
+            </label>
+            <button type="submit" class="btn btn-danger"><i class="fa fa-text fa-trash"></i>Remove</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="pageId">page-edit-invoice</div>

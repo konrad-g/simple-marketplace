@@ -1,0 +1,255 @@
+@mixin background-linear-gradient($topColor, $bottomColor) {
+  background-image: -webkit-linear-gradient(top, $topColor 0, $bottomColor 100%);
+  background-image: -o-linear-gradient(top, $topColor 0, $bottomColor 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from($topColor), to($bottomColor));
+  background-image: linear-gradient(to bottom, $topColor 0, $bottomColor 100%);
+}
+
+@mixin no-drag() {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+// Navbar
+// -------------------------
+
+.header-content {
+  width: 100%;
+  height: 100%;
+}
+
+header.navbar {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border: none;
+  border-radius: 0;
+}
+
+.nav {
+  white-space: nowrap;
+}
+
+.navbar-nav img {
+  width: 30px;
+  height: 30px;
+  margin: -15px 15px -15px;
+}
+
+.navbar-default .navbar-toggle {
+  float: left;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+
+.navbar-default .navbar-brand img {
+  float: left;
+  height: 40px;
+  margin-top: -9px;
+  margin-right: 11px;
+  width: 205px;
+}
+
+.navbar-default {
+  background: url(/src/client/app/ui/menu-top/assets/menuBg.jpg) left top repeat;
+  background-size: contain;
+  color: #fff;
+  border-top: #686868 2px solid;
+  border-bottom: #3a3a3a 2px solid;
+}
+
+.navbar-right {
+  float: right;
+}
+
+.navbar-default .navbar-brand {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:active,
+.navbar-default .navbar-brand:link,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:visited,
+.navbar-default .navbar-nav > a,
+.navbar-default .navbar-nav > a:active
+.navbar-default .navbar-nav > a:link,
+.navbar-default .navbar-nav > a:focus,
+.navbar-default .navbar-nav > a:visited {
+  @include no-drag();
+  color: #fff !important;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav > a:hover {
+  color: #f0f0f0;
+}
+
+.api-command-name,
+.api-command-name:active
+.api-command-name:link,
+.api-command-name:focus,
+.api-command-name:visited {
+  @include no-drag();
+  color: #fff;
+}
+
+.api-command-name:hover {
+  color: #f0f0f0;
+}
+
+.navbar-default .navbar-left {
+  display: inline-block;
+  margin: 0;
+}
+
+.navbar-default .navbar-nav > .divider {
+  width: 1px;
+  height: 30px;
+  display: inline-block;
+  padding-top: 11px;
+}
+
+.navbar-default .navbar-nav > .divider > .divider-fill {
+  width: 1px;
+  height: 30px;
+  display: block;
+  background-color: #bfbfbf;
+}
+
+.btn-nav.padding-right {
+  margin-right: 15px;
+}
+
+.navbar-default .navbar-nav > li.dropdown > a .btn-text {
+  min-width: 50px;
+  max-width: 200px;
+  display: inline-block;
+  overflow: hidden;
+  float: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.navbar-default .navbar-nav > li.dropdown > a,
+.navbar-default .navbar-nav > li.dropdown > a:link,
+.navbar-default .navbar-nav > li.dropdown > a:focus,
+.navbar-default .navbar-nav > li.dropdown > a:visited,
+.navbar-default .navbar-nav > li.dropdown.open > a,
+.navbar-default .navbar-nav > li.dropdown.open > a:link,
+.navbar-default .navbar-nav > li.dropdown.open > a:focus,
+.navbar-default .navbar-nav > li.dropdown.open > a:visited,
+.navbar-default .btn-nav,
+.navbar-default .btn-nav:link,
+.navbar-default .btn-nav:focus,
+.navbar-default .btn-nav:visited {
+  @include background-linear-gradient(#808080, #131212);
+  @include no-drag();
+  color: #FFF;
+  display: inline-block;
+  border-radius: 5px;
+  line-height: 34px;
+  padding: 0px 15px;
+  margin-top: 7px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px #808080 solid;
+  line-height: 36px;
+  text-decoration: none;
+  cursor: pointer;
+  height: 36px;
+}
+
+.navbar-nav > li > .dropdown-menu > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > a:hover,
+.navbar-default .navbar-nav > li.dropdown > a:hover,
+.navbar-default .navbar-nav > li.dropdown.open > a:hover,
+.navbar-default .btn-nav:hover {
+  border-bottom: 3px #808080 solid;
+}
+
+.navbar-nav > li > .dropdown-menu > a:active,
+.navbar-default .navbar-nav .open .dropdown-menu > a:active,
+.navbar-default .navbar-nav > li.dropdown.open > a:active,
+.navbar-default .btn-nav:active {
+  color: #FFF;
+  border-bottom: 1px #808080 solid;
+}
+
+.navbar-nav > li > .dropdown-menu {
+  @include background-linear-gradient(#292828, #131212);
+  @include no-drag();
+  color: #FFF;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.navbar-nav > li > .dropdown-menu > li.divider {
+  display: none;
+}
+
+.navbar-nav > li > .dropdown-menu > li > a,
+.navbar-nav > li > .dropdown-menu > li > a:link,
+.navbar-nav > li > .dropdown-menu > li > a:focus,
+.navbar-nav > li > .dropdown-menu > li > a:visited {
+  @include no-drag();
+  @include background-linear-gradient(#808080, #000000);
+  color: #FFF;
+  color: #FFF;
+  line-height: 34px;
+  padding: 0px 15px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px #808080 solid;
+  line-height: 40px;
+  height: 40px;
+  margin-top: 1px;
+}
+
+/* Phone */
+@media all and (max-width: 767px) {
+  .navbar-default .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding-left: 0;
+    padding-right: 0;
+
+    img {
+      width: 170px;
+    }
+  }
+
+  .navbar-default .btn-nav {
+    width: 52px;
+  }
+}
+
+@media all and (max-width: 435px) {
+  .navbar-default .navbar-brand {
+    font-size: 15px;
+    line-height: 15px;
+    left: 41%;
+  }
+}
+
+@media all and (max-width: 410px) {
+  .navbar-default .navbar-brand img {
+    width: 120px;
+    margin-right: 0;
+  }
+  .navbar-default .navbar-brand .text {
+    display: none;
+  }
+}

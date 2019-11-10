@@ -1,0 +1,22 @@
+<div class="app-card-1 app-panel-super-small">
+  <h2 class="page-header">Forgot Password</h2>
+</div>
+<div class="app-card-1 app-panel-smaller">
+  <form data-parsley-validate method="POST" action="?" class="form-horizontal ajax">
+    <input type="hidden" name="_csrf" value="{{_csrf}}">
+    <div class="form-group">
+      <label for="email" class="col-sm-3 control-label">Email</label>
+      <div class="col-sm-7">
+        <input type="email" name="email" id="email"
+               placeholder="Email" required=""
+               class="form-control"
+               value="{{email}}"
+               required></div>
+      </div>
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-7">
+        <button type="submit" class="btn btn-main"><i class="fa fa-text fa-key"></i>Reset Password</button>
+      </div>
+    </div>
+  </form>
+</div>
