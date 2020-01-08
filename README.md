@@ -2,6 +2,8 @@
 
 It's an example implementation of a two-sided marketplace, adapted for the US market.  
 
+This app was created as a part of an article [Pay in, Pay out: How to Create a Marketplace](https://www.toptal.com/ecommerce/create-a-marketplace-tutorial#catch-just-dynamite-developers)
+
 ### Screenshots  
 
 [Dashboard](/screenshots/dashboard.png)  
