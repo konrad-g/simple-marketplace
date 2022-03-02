@@ -75,7 +75,7 @@
     "gulp-uglifyes": "^0.1.2",
     "gulp-watch": "^4.3.11",
     "jasmine-core": "^2.5.2",
-    "karma": "^1.6.0",
+    "karma": "^6.3.16",
     "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
     "karma-coverage": "^1.1.1",
