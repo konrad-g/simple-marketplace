@@ -14,7 +14,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "jquery-pjax": "^2.0.1",
-    "moment-timezone": "^0.5.25",
+    "moment-timezone": "^0.5.35",
     "nprogress": "^0.2.0",
     "parsleyjs": "^2.9.1"
   },
