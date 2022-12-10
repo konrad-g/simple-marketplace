@@ -24,7 +24,7 @@
     "dateformat": "^2.0.0",
     "dotenv": "^4.0.0",
     "errorhandler": "^1.4.3",
-    "express": "^4.14.0",
+    "express": "^4.17.3",
     "express-flash": "^0.0.2",
     "express-pjax": "git://github.com/optikfluffel/express-pjax.git",
     "express-session": "^1.14.2",
